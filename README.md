@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## How to use
 - This project is a "monorepo". It has a `projects` folder, containing a shared library and a "dashboard" application (it's just a name...). There is just one central `node_modules`.
 - You can generate additional libraries and applications using
-  - `ng generate library <library-name`
+  - `ng generate library <library-name>`
   - `ng generate application <application-name>`
 - It has a build script `npm run build_lib` to build the libary.
 - Remember to (re)build the libary if you changed it and want to use it in the applications.
