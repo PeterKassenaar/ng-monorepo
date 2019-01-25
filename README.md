@@ -1,5 +1,7 @@
 # NgMonorepo
 
+Sample project of an Angular 7.x monorepo project. One folder, containing multiple applications and using shared libraries
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
 ## How to use
