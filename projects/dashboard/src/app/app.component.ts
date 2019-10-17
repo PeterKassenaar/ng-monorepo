@@ -11,9 +11,10 @@ export class AppComponent implements OnInit {
   users: User[];
 
   constructor(private userService: UserService) {
+
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.users = this.userService.getUsers();
   }
 }

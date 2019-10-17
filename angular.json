@@ -4,9 +4,9 @@
   "newProjectRoot": "projects",
   "projects": {
     "shared-lib": {
+      "projectType": "library",
       "root": "projects/shared-lib",
       "sourceRoot": "projects/shared-lib/src",
-      "projectType": "library",
       "prefix": "sl",
       "architect": {
         "build": {
@@ -39,11 +39,11 @@
       }
     },
     "dashboard": {
-      "root": "projects/dashboard/",
-      "sourceRoot": "projects/dashboard/src",
       "projectType": "application",
-      "prefix": "app",
       "schematics": {},
+      "root": "projects/dashboard",
+      "sourceRoot": "projects/dashboard/src",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -53,6 +53,7 @@
             "main": "projects/dashboard/src/main.ts",
             "polyfills": "projects/dashboard/src/polyfills.ts",
             "tsConfig": "projects/dashboard/tsconfig.app.json",
+            "aot": false,
             "assets": [
               "projects/dashboard/src/favicon.ico",
               "projects/dashboard/src/assets"
@@ -84,6 +85,11 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -113,14 +119,14 @@
             "polyfills": "projects/dashboard/src/polyfills.ts",
             "tsConfig": "projects/dashboard/tsconfig.spec.json",
             "karmaConfig": "projects/dashboard/karma.conf.js",
-            "styles": [
-              "projects/dashboard/src/styles.css"
-            ],
-            "scripts": [],
             "assets": [
               "projects/dashboard/src/favicon.ico",
               "projects/dashboard/src/assets"
-            ]
+            ],
+            "styles": [
+              "projects/dashboard/src/styles.css"
+            ],
+            "scripts": []
           }
         },
         "lint": {
@@ -128,24 +134,18 @@
           "options": {
             "tsConfig": [
               "projects/dashboard/tsconfig.app.json",
-              "projects/dashboard/tsconfig.spec.json"
+              "projects/dashboard/tsconfig.spec.json",
+              "projects/dashboard/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
           }
-        }
-      }
-    },
-    "dashboard-e2e": {
-      "root": "projects/dashboard-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
+        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/dashboard-e2e/protractor.conf.js",
+            "protractorConfig": "projects/dashboard/e2e/protractor.conf.js",
             "devServerTarget": "dashboard:serve"
           },
           "configurations": {
@@ -153,18 +153,8 @@
               "devServerTarget": "dashboard:serve:production"
             }
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "projects/dashboard-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
-    }
-  },
+    }},
   "defaultProject": "shared-lib"
 }

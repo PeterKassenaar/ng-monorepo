@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 // sample model. Of course this can/should be in its own file
 export interface User {
@@ -6,11 +6,13 @@ export interface User {
   email: string;
 }
 
-// Our service
+// our shared service in the library
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  constructor() { }
 
   // list of static users, but you can do anything
   // here. Call API's, use @ngrx/store, and so on.
@@ -18,9 +20,6 @@ export class UserService {
     {name: 'Peter', email: 'test@test.com'},
     {name: 'Sandra', email: 'sandra@sandra.com'}
   ];
-
-  constructor() {
-  }
 
   getUsers() {
     return this.users;
