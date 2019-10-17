@@ -8,8 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "shared-lib": "ng build shared-lib",
-    "dashboard": "ng serve --project dashboard"
+    "build-lib": "ng build shared-lib",
+    "dashboard": "ng serve --project dashboard --open"
   },
   "private": true,
   "dependencies": {
