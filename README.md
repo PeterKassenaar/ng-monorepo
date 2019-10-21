@@ -1,27 +1,28 @@
-# Ng8Monorepo
+# ng-monorepo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
-## Development server
+Sample project of an Angular 8.x monorepo project. 
+One root folder, containing multiple applications and using shared libraries.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## How to use
+- This project is a "monorepo". It has a `projects` folder, containing a shared library and a "dashboard" application (it's just a name...). There is just one central `node_modules`.
+- You can generate additional libraries and applications using
+  - `ng generate library <library-name>`
+  - `ng generate application <application-name>`
+- It has a build script `npm run build-lib` to build the libary.
+- Remember to (re)build the libary if you changed it and want to use it in the applications.
+- Use `ng serve --project=<application-name>` to run/serve a specific application.
 
-## Code scaffolding
+## Credits
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Based on the awesome work by the team of Angular In Depth:
+-   https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5
+- https://blog.angularindepth.com/creating-a-library-in-angular-6-part-2-6e2bc1e14121
+- https://blog.angularindepth.com/the-angular-library-series-publishing-ce24bb673275 
 
-## Build
+## Book a training?
+Want to follow an Angular training on your own, or with colleagues from your company? See the calendar at https://kassenaar.com/calendar/ or contact met at info@kassenaar.com.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Peter Kassenaar - info@kassenaar.com (C) 2019
