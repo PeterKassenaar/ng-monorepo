@@ -5,3 +5,8 @@
 <hr>
 <h2>3. Users from our shared UserService:</h2>
 {{ users | json }}
+<hr>
+<div *ngIf="configName">
+  <h2>4. Configuration Name, passed in as UserService.forRoot('someName')</h2>
+  {{ configName | json }}
+</div>

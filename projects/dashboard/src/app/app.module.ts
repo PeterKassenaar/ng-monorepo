@@ -10,6 +10,8 @@ import {SharedLibModule} from 'shared-lib';
   ],
   imports: [
     BrowserModule,
+    // See the static .forRoot() method on our UserService. We can 'configure' it
+    // by passing in a name as a string.
     SharedLibModule.forRoot()
   ],
   providers: [],

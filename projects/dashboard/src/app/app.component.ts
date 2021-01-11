@@ -9,6 +9,7 @@ import {User, UserService} from 'shared-lib';
 export class AppComponent implements OnInit {
   title = 'dashboard';
   users: User[];
+  configName: string; // The (optional) string that was passed in as a configuration parameter for our service.
 
   constructor(private userService: UserService) {
 
@@ -16,5 +17,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.users = this.userService.getUsers();
+    this.configName = this.userService.getConfigName();
   }
 }
