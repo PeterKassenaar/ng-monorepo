@@ -1,4 +1,4 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
+import {ModuleWithProviders, NgModule, Optional, SkipSelf} from '@angular/core';
 import {SharedLibComponent} from './shared-lib.component';
 import {TestComponent} from './test/test.component';
 import {UserService} from './shared/services/user.service';
@@ -9,6 +9,14 @@ import {UserService} from './shared/services/user.service';
   exports: [SharedLibComponent, TestComponent]
 })
 export class SharedLibModule {
+  // Make sure this is a Singleton, i.e.
+  // Prevent this module from being loaded twice
+  constructor(@Optional() @SkipSelf() parentModule?: SharedLibModule) {
+    if (parentModule) {
+      throw new Error('Shared Library is already loaded. Import it in AppModule only');
+    }
+  }
+
   // Use the .forRoot() static method to make sure our UserService is a singleton
   static forRoot(configName?: string): ModuleWithProviders {
     // 0. We can configure our UserService, by passing in a 'configName' string.
