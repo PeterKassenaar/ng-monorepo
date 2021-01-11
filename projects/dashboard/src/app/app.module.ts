@@ -12,6 +12,7 @@ import {SharedLibModule} from 'shared-lib';
     BrowserModule,
     // See the static .forRoot() method on our UserService. We can 'configure' it
     // by passing in a name as a string.
+    // More info: https://angular.io/guide/singleton-services
     SharedLibModule.forRoot()
   ],
   providers: [],
