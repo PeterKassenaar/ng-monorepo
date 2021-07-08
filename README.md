@@ -25,4 +25,4 @@ Based on the awesome work by the team of Angular In Depth:
 Want to follow an Angular training on your own, or with colleagues from your company? See the calendar at https://kassenaar.com/calendar/ or contact met at info@kassenaar.com.
 
 
-Peter Kassenaar - info@kassenaar.com (C) 2019
+Peter Kassenaar - info@kassenaar.com (C) 2019 - 2021
