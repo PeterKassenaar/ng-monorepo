@@ -18,6 +18,7 @@ export class SharedLibModule {
   }
 
   // Use the .forRoot() static method to make sure our UserService is a singleton
+  // More info: https://angular.io/guide/singleton-services
   static forRoot(configName?: string): ModuleWithProviders {
     // 0. We can configure our UserService, by passing in a 'configName' string.
     // Of course this can be of any type.
